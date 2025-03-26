@@ -3,6 +3,8 @@ import 'package:latihan_dart_flutter/pages/custom_drawer.dart';
 import 'package:latihan_dart_flutter/pages/main_screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,63 +35,65 @@ class HomeScreen extends StatelessWidget {
           );
         },
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height:15),
-            Text(
-              'Hello, Aqeel!',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.normal,
-              ),
-            ),
-            SizedBox(height:15),
-            Wrap(
-              spacing: 10,
-              runSpacing: 10,
-              alignment: WrapAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    _buildGridCard(context, '3', 'Total Gudang', Icons.warehouse_outlined),
-                    _buildGridCard(context, '0', 'Total Stok', Icons.inventory_2_outlined),
-                  ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height:15),
+              Text(
+                'Hello, Aqeel!',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
                 ),
-
-                Row(
-                  children: [
-                    _buildGridCard(context, '0', 'Produk Stok Tipis', Icons.warning_amber),
-                    _buildGridCard(context, '0', 'Produk Stok Habis', Icons.hourglass_disabled),
-                  ],
+              ),
+              SizedBox(height:15),
+              Wrap(
+                spacing: 10,
+                runSpacing: 10,
+                alignment: WrapAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      _buildGridCard(context, '3', 'Total Gudang', Icons.warehouse_outlined),
+                      _buildGridCard(context, '62', 'Total Stok', Icons.inventory_2_outlined),
+                    ],
+                  ),
+        
+                  Row(
+                    children: [
+                      _buildGridCard(context, '18', 'Produk Stok Tipis', Icons.warning_amber),
+                      _buildGridCard(context, '27', 'Produk Stok Habis', Icons.hourglass_disabled),
+                    ],
+                  ),
+                ]
+              ),
+              SizedBox(height:28),
+              Text(
+                'Laporan Hari Ini',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
                 ),
-              ]
-            ),
-            SizedBox(height:28),
-            Text(
-              'Laporan Hari Ini',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w600,
               ),
-            ),
-            SizedBox(height:15),
-            SizedBox(
-              height: 220,
-              child: ListView.separated(
-                itemBuilder: (BuildContext context, int index) {
-                  return _LaporanCard();
-                }, 
-                separatorBuilder: (BuildContext context, int index){
-                  return SizedBox(width: 16);
-                }, 
-                itemCount: 5,
-                scrollDirection: Axis.horizontal,
+              SizedBox(height:15),
+              SizedBox(
+                height: 220,
+                child: ListView.separated(
+                  itemBuilder: (BuildContext context, int index) {
+                    return _LaporanCard();
+                  }, 
+                  separatorBuilder: (BuildContext context, int index){
+                    return SizedBox(width: 16);
+                  }, 
+                  itemCount: 5,
+                  scrollDirection: Axis.horizontal,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

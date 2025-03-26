@@ -8,6 +8,8 @@ import 'package:latihan_dart_flutter/pages/profile_screen.dart';
 import 'package:latihan_dart_flutter/pages/reports_screen.dart';
 
 class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
+
   @override
   _MainScreenState createState() => _MainScreenState();
 }
@@ -71,16 +73,15 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       drawer: CustomDrawer(
         onTap: (index) {
-          _onItemTapped(index); // Navigasi ke layar yang sesuai
-          Navigator.pop(context); // Tutup drawer
+          _onItemTapped(index);
+          Navigator.pop(context);
         },
       ),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.warehouse), label: 'Warehouse'),
+          BottomNavigationBarItem(icon: Icon(Icons.warehouse), label: 'Warehouse'),
           BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: 'Report'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],

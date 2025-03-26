@@ -3,6 +3,7 @@ import 'package:latihan_dart_flutter/pages/main_screen.dart';
 import 'package:latihan_dart_flutter/pages/login_page.dart';
 
 class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +16,11 @@ class RegisterPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 // Logo
-                SizedBox(height: 60),
+                SizedBox(height: 40),
                 Image.asset(
                   'lib/images/logo2.png',
                   width: 150),
-                SizedBox(height: 60),
+                SizedBox(height: 40),
 
                 // Greetings
                 Padding(
@@ -32,7 +33,7 @@ class RegisterPage extends StatelessWidget {
                           minWidth: 385
                         ),
                         child: Text(
-                          'Kembali Lagi!',
+                          'Selamat Datang!',
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 36,
@@ -41,7 +42,7 @@ class RegisterPage extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        'Sudah Siap Manage Gudangmu Lagi?',
+                        'Sudah Siap Manage Gudangmu dengan Invigo?',
                         style: TextStyle(
                           color: Colors.black.withValues(alpha: 0.5),
                           fontSize: 16
@@ -113,35 +114,38 @@ class RegisterPage extends StatelessWidget {
                 ),
                 SizedBox(height: 15),
 
-                // Forgot Password
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (builder){
-                        return LoginPage();
-                      })
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          'Lupa Kata Sandi?',
-                          style: TextStyle(
-                            color: Colors.black.withValues(alpha: 0.7),
-                            fontSize: 14
-                          ),
+                // Confirm Password Textfield
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(color: Colors.white54),
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.1),
+                          spreadRadius: 1,
+                          blurRadius: 2, 
+                          offset: Offset(0, 1),
                         ),
                       ],
                     ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20.0),
+                      child: TextField(
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Konfirmasi Kata Sandi',
+                        ),
+                      ),
+                  ),
                   ),
                 ),
                 SizedBox(height: 50),
 
-                // Login Button
+                // Register Button
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Row(
@@ -165,9 +169,9 @@ class RegisterPage extends StatelessWidget {
                             )
                           ),
                           child: Text(
-                            'Masuk',
+                            'Daftar',
                             style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.white,
                               fontWeight: FontWeight.w700,
                               fontSize: 18,
                             ),
@@ -177,24 +181,24 @@ class RegisterPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 175),
+                SizedBox(height: 130),
 
-                // Register Button
+                // Login Button
                 GestureDetector(
                   onTap: () {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(builder: (builder){
-                        return RegisterPage();
+                        return LoginPage();
                       })
                     );
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Belum punya akun? '),
+                      Text('Sudah punya akun? '),
                       Text(
-                        'Daftar Disini', 
+                        'Masuk Disini', 
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                         ),

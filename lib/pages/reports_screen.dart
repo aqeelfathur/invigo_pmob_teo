@@ -4,6 +4,8 @@ import 'package:latihan_dart_flutter/pages/main_screen.dart';
 import 'package:latihan_dart_flutter/widgets/build_list_tile.dart';
 
 class ReportsScreen extends StatelessWidget {
+  const ReportsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

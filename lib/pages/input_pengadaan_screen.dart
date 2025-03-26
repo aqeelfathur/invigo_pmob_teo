@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class InputPengadaanScreen extends StatelessWidget {
+  const InputPengadaanScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

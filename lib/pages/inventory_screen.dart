@@ -3,6 +3,8 @@ import 'package:latihan_dart_flutter/pages/custom_drawer.dart';
 import 'package:latihan_dart_flutter/pages/main_screen.dart';
 
 class InventoryScreen extends StatelessWidget {
+  const InventoryScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

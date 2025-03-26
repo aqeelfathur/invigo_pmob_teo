@@ -4,7 +4,7 @@ import 'package:latihan_dart_flutter/pages/login_page.dart';
 class CustomDrawer extends StatelessWidget {
   final Function(int) onTap;
 
-  CustomDrawer({required this.onTap});
+  const CustomDrawer({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {

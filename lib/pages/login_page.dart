@@ -3,6 +3,7 @@ import 'package:latihan_dart_flutter/pages/main_screen.dart';
 import 'package:latihan_dart_flutter/pages/register_page.dart';
 
 class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +16,11 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 // Logo
-                SizedBox(height: 60),
+                SizedBox(height: 40),
                 Image.asset(
                   'lib/images/logo2.png',
-                  width: 150),
-                SizedBox(height: 60),
+                  width: 140),
+                SizedBox(height: 40),
 
                 // Greetings
                 Padding(
@@ -167,7 +168,7 @@ class LoginPage extends StatelessWidget {
                           child: Text(
                             'Masuk',
                             style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.white,
                               fontWeight: FontWeight.w700,
                               fontSize: 18,
                             ),
