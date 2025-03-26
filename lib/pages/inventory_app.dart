@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_dart_flutter/pages/main_screen.dart';
+import 'package:latihan_dart_flutter/pages/login_page.dart';
 
 class InventoryApp extends StatelessWidget {
   @override
@@ -7,7 +7,7 @@ class InventoryApp extends StatelessWidget {
     return MaterialApp(
       title: 'Inventory App',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MainScreen(),
+      home: LoginPage(),
       debugShowCheckedModeBanner: false,
     );
   }

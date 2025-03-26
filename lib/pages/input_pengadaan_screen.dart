@@ -28,7 +28,7 @@ class InputPengadaanScreen extends StatelessWidget {
             SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Logika untuk menyimpan data pengadaan
+                
               },
               child: Text('Simpan'),
             ),
